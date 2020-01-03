@@ -1,7 +1,9 @@
 package com.newheart.service;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
  * @Author newHeart
@@ -10,6 +12,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 @EnableAutoConfiguration
 public class DubboProviderDemo {
     public static void main(String[] args) {
-        SpringApplication.run(DubboProviderDemo.class);
+//        非web方式启动
+        new SpringApplicationBuilder(DubboProviderDemo.class).web(WebApplicationType.NONE).run();
+//        SpringApplication.run(DubboProviderDemo.class);
     }
 }

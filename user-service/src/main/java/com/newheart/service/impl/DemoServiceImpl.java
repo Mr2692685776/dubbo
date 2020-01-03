@@ -11,6 +11,12 @@ import org.apache.dubbo.config.annotation.Service;
 public class DemoServiceImpl implements DemoService {
     @Override
     public String hello() {
+        System.out.println("被调用");
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return "hello Dubbo";
     }
 }
